@@ -23,6 +23,21 @@ def prime_numbers():
                         break
                 else:
                     print(num, 'is palindrome prime number')
+    for num in range(1000):
+        order = len(str(num))
+        sum = 0
+        temp = num
+        while temp > 0:
+            digit = temp % 10
+            sum += digit ** order
+            temp //= 10
+        if num == sum:
+            if num > 1:
+                for i in range(2, num):
+                    if (num % i) == 0:
+                        break
+                else:
+                    print(num, 'is Armstrong prime number')
 
 
 if __name__ == '__main__':
